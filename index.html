@@ -436,7 +436,8 @@
             width: 100%;
             height: 100%;
             /* Solid background that covers the geometry */
-            background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
+            /* UPDATED: Golden gradient instead of black */
+            background: radial-gradient(circle at center, #F0E68C 0%, #D4AF37 50%, #8B6508 100%);
             /* Start closed */
             clip-path: circle(0% at 50% 50%); 
             z-index: 30; 
@@ -711,7 +712,7 @@
 
             <!-- NEW: Cinematic Title (Outside Box) -->
             <div id="cinematic-title-outside">
-                <h2 class="font-header text-xs md:text-sm text-gold-300 tracking-[0.4em] uppercase drop-shadow-lg">AFTER MOVIE 2025</h2>
+                <h2 class="font-header text-xs md:text-sm text-gray-300 tracking-[0.4em] uppercase drop-shadow-lg">AFTER MOVIE 2025</h2>
             </div>
 
             <!-- 2. The Cinematic Video (Fades in on top) -->
@@ -723,7 +724,8 @@
                 
                 <video id="main-video" autoplay loop muted playsinline crossorigin="anonymous">
                     <!-- Reliable abstract fluid video -->
-                    <source src="https://videos.pexels.com/video-files/5527732/5527732-sd_640_360_25fps.mp4" type="video/mp4">
+                    <!-- UPDATED: Event/After Movie style video -->
+                    <source src="https://videos.pexels.com/video-files/2609279/2609279-hd_1920_1080_30fps.mp4" type="video/mp4">
                 </video>
             </div>
             
