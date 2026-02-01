@@ -314,11 +314,13 @@
             pointer-events: auto;
         }
 
-        .nav-visible .chain-node:nth-child(1) { transition-delay: 0.1s; }
-        .nav-visible .chain-node:nth-child(2) { transition-delay: 0.2s; }
-        .nav-visible .chain-node:nth-child(3) { transition-delay: 0.3s; }
-        .nav-visible .chain-node:nth-child(4) { transition-delay: 0.4s; }
-        .nav-visible .chain-node:nth-child(5) { transition-delay: 0.5s; }
+        /* UPDATED DELAYS FOR 6 NODES */
+        .nav-visible .chain-node:nth-of-type(1) { transition-delay: 0.1s; }
+        .nav-visible .chain-node:nth-of-type(2) { transition-delay: 0.2s; }
+        .nav-visible .chain-node:nth-of-type(3) { transition-delay: 0.3s; }
+        .nav-visible .chain-node:nth-of-type(4) { transition-delay: 0.4s; }
+        .nav-visible .chain-node:nth-of-type(5) { transition-delay: 0.5s; }
+        .nav-visible .chain-node:nth-of-type(6) { transition-delay: 0.6s; }
 
         .chain-line {
             height: 0;
@@ -328,10 +330,12 @@
             height: 1.5rem; 
             transition-delay: 0.15s; 
         }
+        /* UPDATED LINE DELAYS */
         .nav-visible .chain-line:nth-of-type(1) { transition-delay: 0.15s; }
         .nav-visible .chain-line:nth-of-type(2) { transition-delay: 0.25s; }
         .nav-visible .chain-line:nth-of-type(3) { transition-delay: 0.35s; }
         .nav-visible .chain-line:nth-of-type(4) { transition-delay: 0.45s; }
+        .nav-visible .chain-line:nth-of-type(5) { transition-delay: 0.55s; }
 
         /* Gallery Styles */
         .gallery-item {
@@ -507,6 +511,39 @@
             100% { stroke: currentColor; filter: drop-shadow(0 0 0 transparent); stroke-width: inherit; }
         }
 
+        /* NEW STYLES FOR SPONSORS ANIMATION */
+        .sponsor-row {
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        
+        .slide-from-left {
+            transform: translateX(-150px);
+        }
+        
+        .slide-from-right {
+            transform: translateX(150px);
+        }
+        
+        .active-row {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .sponsor-tile {
+            background: rgba(10, 10, 10, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+        
+        .sponsor-tile:hover {
+            border-color: rgba(212, 175, 55, 0.8);
+            background: rgba(20, 20, 20, 0.7);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+            transform: translateY(-5px);
+        }
+
     </style>
 </head>
 <body class="font-body selection:bg-gold-500 selection:text-black">
@@ -577,6 +614,16 @@
                 <span class="font-header text-[0.65rem] tracking-[0.25em] text-gold-200 bg-black/80 px-2 py-1 rounded-sm border border-gold-500/20 backdrop-blur-md">ARCHIVE</span>
             </div>
         </div>
+        <div class="chain-line w-px bg-gradient-to-b from-gold-500/50 to-gold-500/50 h-0"></div>
+        <!-- Node 5 (NEW: Partners) -->
+        <div class="chain-node relative group">
+            <a href="#sponsors" onclick="toggleNav()" class="block w-8 h-8 rotate-45 border border-gold-500/50 bg-charcoal/90 backdrop-blur hover:bg-gold-500/20 hover:border-gold-300 transition-all duration-300 shadow-[0_0_10px_rgba(0,0,0,0.5)] flex items-center justify-center rounded-md group-hover:scale-110">
+                <i data-lucide="handshake" class="-rotate-45 w-3.5 h-3.5 text-cyan-400 drop-shadow-[0_0_3px_rgba(34,211,238,0.8)] fill-cyan-400/20 transition-all group-hover:drop-shadow-[0_0_6px_rgba(34,211,238,1)]"></i>
+            </a>
+            <div class="absolute right-12 top-1/2 -translate-y-1/2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap">
+                <span class="font-header text-[0.65rem] tracking-[0.25em] text-gold-200 bg-black/80 px-2 py-1 rounded-sm border border-gold-500/20 backdrop-blur-md">PARTNERS</span>
+            </div>
+        </div>
         <div class="chain-line w-px bg-gradient-to-b from-gold-500/50 to-transparent h-0"></div>
         <!-- Action Node -->
         <div class="chain-node relative group mt-1">
@@ -645,7 +692,7 @@
         <div class="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
             
             <div id="geo-title" class="absolute top-10 text-center z-10 mix-blend-difference pointer-events-none bg-void/30 backdrop-blur-[2px] p-4 rounded-xl transition-opacity duration-500">
-                <h2 class="font-header text-3xl md:text-5xl text-gold-300 mb-2 tracking-widest opacity-80">ABOUT</h2>
+                <h2 class="font-header text-3xl md:text-5xl text-gold-300 mb-2 tracking-widest">ABOUT</h2>
                 <p class="font-body text-gold-100/60 text-sm tracking-[0.2em] uppercase">Dissolve and Coagulate</p>
             </div>
 
@@ -944,26 +991,80 @@
     </section>
 
     <!-- Transmutation Interactive Section -->
-    <section class="relative h-screen bg-transparent flex flex-col items-center justify-center overflow-hidden z-10" id="sponsors">
+    <section class="relative min-h-screen bg-transparent flex flex-col items-center justify-center overflow-hidden z-10 py-20" id="sponsors">
         <div class="absolute inset-0 z-0">
             <canvas id="alchemyCanvas"></canvas>
         </div>
         
-        <div class="relative z-10 text-center pointer-events-none mix-blend-difference">
-            <h2 class="font-header text-5xl md:text-7xl text-gold-100 mb-4 tracking-tight">Sponsors & Partners</h2>
-            <p class="font-body text-xl text-white/80">Move your cursor to transmute Lead into Gold</p>
-        </div>
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col gap-16">
+            <div class="text-center mb-10 reveal-on-scroll">
+                <h2 class="font-header text-5xl md:text-7xl text-gold-100 mb-4 tracking-tight drop-shadow-lg">Our Partners</h2>
+                <p class="font-body text-xl text-gold-500/80 italic">The architects of our reality</p>
+            </div>
 
-        <div class="absolute bottom-10 left-0 w-full flex justify-center z-10">
-            <div class="border border-gold-500/30 bg-black/50 backdrop-blur px-8 py-4 rounded-full flex gap-8">
-                <div class="text-center">
-                    <span class="block text-2xl font-header text-gray-500" id="leadCount">0</span>
-                    <span class="text-xs uppercase tracking-widest text-gray-600">Lead</span>
+            <!-- Row 1: Slide from Left -->
+            <div class="sponsor-row slide-from-left flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
+                <div class="sponsor-tile w-64 h-32 rounded-lg flex items-center justify-center group">
+                    <div class="text-center opacity-70 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="box" class="w-8 h-8 mx-auto mb-2 text-gold-300"></i>
+                        <span class="font-header text-gold-100 tracking-widest">AETHER CORP</span>
+                    </div>
                 </div>
-                <div class="w-[1px] bg-gold-500/30"></div>
-                <div class="text-center">
-                    <span class="block text-2xl font-header text-gold-400" id="goldCount">0</span>
-                    <span class="text-xs uppercase tracking-widest text-gold-600">Gold</span>
+                <div class="sponsor-tile w-64 h-32 rounded-lg flex items-center justify-center group">
+                    <div class="text-center opacity-70 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="hexagon" class="w-8 h-8 mx-auto mb-2 text-gold-300"></i>
+                        <span class="font-header text-gold-100 tracking-widest">NEXUS LABS</span>
+                    </div>
+                </div>
+                <div class="sponsor-tile w-64 h-32 rounded-lg flex items-center justify-center group">
+                    <div class="text-center opacity-70 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="zap" class="w-8 h-8 mx-auto mb-2 text-gold-300"></i>
+                        <span class="font-header text-gold-100 tracking-widest">VOLT DYNAMICS</span>
+                    </div>
+                </div>
+                <div class="sponsor-tile w-64 h-32 rounded-lg flex items-center justify-center group">
+                    <div class="text-center opacity-70 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="globe" class="w-8 h-8 mx-auto mb-2 text-gold-300"></i>
+                        <span class="font-header text-gold-100 tracking-widest">ORBITAL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Slide from Right -->
+            <div class="sponsor-row slide-from-right flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
+                <div class="sponsor-tile w-64 h-32 rounded-lg flex items-center justify-center group">
+                    <div class="text-center opacity-70 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="anchor" class="w-8 h-8 mx-auto mb-2 text-gold-300"></i>
+                        <span class="font-header text-gold-100 tracking-widest">DEEP VENTURES</span>
+                    </div>
+                </div>
+                <div class="sponsor-tile w-64 h-32 rounded-lg flex items-center justify-center group">
+                    <div class="text-center opacity-70 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="cpu" class="w-8 h-8 mx-auto mb-2 text-gold-300"></i>
+                        <span class="font-header text-gold-100 tracking-widest">SILICON SOUL</span>
+                    </div>
+                </div>
+                <div class="sponsor-tile w-64 h-32 rounded-lg flex items-center justify-center group">
+                    <div class="text-center opacity-70 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="feather" class="w-8 h-8 mx-auto mb-2 text-gold-300"></i>
+                        <span class="font-header text-gold-100 tracking-widest">HERMES MEDIA</span>
+                    </div>
+                </div>
+                <div class="sponsor-tile w-64 h-32 rounded-lg flex items-center justify-center group">
+                    <div class="text-center opacity-70 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="key" class="w-8 h-8 mx-auto mb-2 text-gold-300"></i>
+                        <span class="font-header text-gold-100 tracking-widest">KEYSTONE</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Row 3: Slide from Left -->
+            <div class="sponsor-row slide-from-left flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
+                <div class="sponsor-tile w-64 h-32 rounded-lg flex items-center justify-center group">
+                    <div class="text-center opacity-70 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="shield" class="w-8 h-8 mx-auto mb-2 text-gold-300"></i>
+                        <span class="font-header text-gold-100 tracking-widest">AEGIS SYSTEMS</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1030,8 +1131,7 @@
         let sparkles = [];
         const particleCount = 200;
         const mouse = { x: null, y: null, radius: 100 };
-        const leadEl = document.getElementById('leadCount');
-        const goldEl = document.getElementById('goldCount');
+        // Removed references to leadEl/goldEl since those elements are removed
         let isNavOpen = false;
 
         // 3. HELPER FUNCTIONS & LOGIC
@@ -1248,10 +1348,6 @@
             for (let i = sparkles.length - 1; i >= 0; i--) {
                 sparkles[i].update(); sparkles[i].draw(); if (sparkles[i].life <= 0) sparkles.splice(i, 1);
             }
-            const goldCount = particles.filter(p => p.isGold).length;
-            if(goldEl && leadEl) {
-                goldEl.innerText = goldCount; leadEl.innerText = particleCount - goldCount;
-            }
         }
 
         // 4. EVENT LISTENERS & INITIALIZATION
@@ -1415,7 +1511,7 @@
             }
         }, { passive: true });
 
-        // Scroll Reveal
+        // Scroll Reveal Observer (Generic)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1426,6 +1522,17 @@
         }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
         document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+        // NEW: Sponsor Row Animation Observer
+        const sponsorObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active-row');
+                }
+            })
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.sponsor-row').forEach(row => sponsorObserver.observe(row));
 
         if(canvas) {
             window.addEventListener('mousemove', (e) => {
