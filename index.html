@@ -356,7 +356,7 @@
             background: #0a0a0a;
             transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            aspect-ratio: 4/5; 
+            aspect-ratio: 16/9; /* Changed to landscape */
         }
 
         .gallery-item:hover {
@@ -913,16 +913,22 @@
             <div class="w-1/2 relative h-full">
                 <div class="flex flex-col gap-6 md:gap-10 animate-marquee-up">
                     <!-- Set A -->
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_25fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Nigredo</h3></div></div>
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Macrocosm</h3></div></div>
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/6561173/6561173-sd_360_640_25fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Sublimation</h3></div></div>
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Aurum Potabile</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_25fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Nigredo</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Macrocosm</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/6561173/6561173-sd_360_640_25fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Sublimation</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Aurum Potabile</h3></div></div>
+                    <!-- Extra Items for Spacing -->
+                    <div class="gallery-item group cursor-pointer aspect-video"><img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Eclipse</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1532798442725-41036acc7489?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/853800/853800-sd_640_360_25fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Flux</h3></div></div>
                     
                     <!-- Set B (Duplicate for Loop) -->
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_25fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Nigredo</h3></div></div>
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Macrocosm</h3></div></div>
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/6561173/6561173-sd_360_640_25fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Sublimation</h3></div></div>
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Aurum Potabile</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/3163534/3163534-sd_640_360_25fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Nigredo</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Macrocosm</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/6561173/6561173-sd_360_640_25fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Sublimation</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Aurum Potabile</h3></div></div>
+                    <!-- Extra Items Duplicate -->
+                    <div class="gallery-item group cursor-pointer aspect-video"><img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Eclipse</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1532798442725-41036acc7489?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/853800/853800-sd_640_360_25fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Flux</h3></div></div>
                 </div>
             </div>
 
@@ -930,20 +936,39 @@
             <div class="w-1/2 relative h-full">
                 <div class="flex flex-col gap-6 md:gap-10 animate-marquee-down">
                     <!-- Set A -->
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Liber Mutus</h3></div></div>
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/2022395/2022395-sd_640_360_30fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Ignis Ardens</h3></div></div>
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><img src="https://images.unsplash.com/photo-1601379327896-d25032df7377?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Geometry</h3></div></div>
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1515405295579-ba7b45498955?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/7565436/7565436-sd_540_960_30fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">The Great Work</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Liber Mutus</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/2022395/2022395-sd_640_360_30fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Ignis Ardens</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><img src="https://images.unsplash.com/photo-1601379327896-d25032df7377?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Geometry</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1515405295579-ba7b45498955?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/7565436/7565436-sd_540_960_30fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">The Great Work</h3></div></div>
+                    <!-- Extra Items for Spacing -->
+                    <div class="gallery-item group cursor-pointer aspect-video"><img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Prisma</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/2802069/2802069-sd_640_360_25fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Ether</h3></div></div>
 
                     <!-- Set B (Duplicate for Loop) -->
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Liber Mutus</h3></div></div>
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/2022395/2022395-sd_640_360_30fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Ignis Ardens</h3></div></div>
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><img src="https://images.unsplash.com/photo-1601379327896-d25032df7377?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Geometry</h3></div></div>
-                    <div class="gallery-item group cursor-pointer aspect-[4/5]"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1515405295579-ba7b45498955?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/7565436/7565436-sd_540_960_30fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">The Great Work</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Liber Mutus</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/2022395/2022395-sd_640_360_30fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Ignis Ardens</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><img src="https://images.unsplash.com/photo-1601379327896-d25032df7377?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Geometry</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1515405295579-ba7b45498955?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/7565436/7565436-sd_540_960_30fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">The Great Work</h3></div></div>
+                    <!-- Extra Items Duplicate -->
+                    <div class="gallery-item group cursor-pointer aspect-video"><img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=800&auto=format&fit=crop" class="gallery-media"><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Prisma</h3></div></div>
+                    <div class="gallery-item group cursor-pointer aspect-video"><video class="gallery-media" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=600&auto=format&fit=crop"><source src="https://videos.pexels.com/video-files/2802069/2802069-sd_640_360_25fps.mp4" type="video/mp4"></video><div class="gallery-overlay p-4"><h3 class="font-header text-gold-300 text-xl">Ether</h3></div></div>
                 </div>
             </div>
         </div>
         
+        <!-- View More Button Footer -->
+        <div class="relative z-20 w-full flex justify-center py-8 bg-gradient-to-t from-void via-void/95 to-transparent shrink-0">
+             <a href="#" class="group relative inline-flex items-center justify-center px-12 py-4 overflow-hidden font-header font-medium tracking-[0.3em] text-gold-300 transition-all duration-300 bg-black/40 border border-gold-500/30 rounded-sm hover:border-gold-400 hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] backdrop-blur-md">
+                <!-- Glare Effect -->
+                <div class="absolute inset-0 w-0 bg-gold-400/10 transition-all duration-[400ms] ease-out group-hover:w-full"></div>
+                <!-- Button Text -->
+                <span class="relative flex items-center gap-4 text-xs md:text-sm uppercase group-hover:text-gold-100 transition-colors">
+                    View Full Gallery
+                    <i data-lucide="arrow-right" class="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1.5"></i>
+                </span>
+            </a>
+        </div>
+
     </section>
 
     <!-- Transmutation Interactive Section -->
@@ -1074,6 +1099,7 @@
         const textRing = document.getElementById('text-ring');
         const navToggleBtn = document.getElementById('nav-toggle');
         const mainNav = document.getElementById('main-nav');
+        const sponsorsSection = document.getElementById('sponsors'); // Added Reference
         
         // 2. GLOBAL VARIABLES
         let width, height;
@@ -1205,7 +1231,14 @@
         function onResize() {
             if(canvas) {
                 width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
+                
+                // FIXED: Set canvas height to the actual height of the sponsors section
+                // This ensures the background extends to cover all wrapped rows
+                if (sponsorsSection) {
+                    height = canvas.height = Math.max(window.innerHeight, sponsorsSection.offsetHeight);
+                } else {
+                    height = canvas.height = window.innerHeight;
+                }
             }
             itemSpacingY = window.innerHeight * 0.65;
             createSpiralPath();
