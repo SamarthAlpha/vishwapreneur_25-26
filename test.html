@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sponsor Stack - Smooth Infinite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .scene {
+      perspective: 1400px;
+    }
+    .card {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transition: 
+        transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+        opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+        width 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+        height 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+      transform-style: preserve-3d;
+      will-change: transform, opacity;
+    }
+    
+    .card img {
+      transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+      pointer-events: none;
+      max-width: 80%;
+      max-height: 60%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-[#111] to-[#000] min-h-screen flex flex-col items-center justify-center overflow-hidden">
+  <h2 class="text-orange-400 tracking-[0.3em] mb-12 text-sm font-semibold">
+    OUR PREVIOUS SPONSORS
+  </h2>
+  <!-- SCENE -->
+  <div class="scene relative w-full max-w-6xl h-80 flex items-center justify-center">
+    <div id="stack" class="relative w-full h-full">
+      
+      <!-- CARDS -->
+      <div class="card w-48 h-32 bg-white rounded-xl flex items-center justify-center shadow-lg" data-index="0">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Stack_Overflow_logo.svg" alt="Stack Overflow" />
+      </div>
+      <div class="card w-48 h-32 bg-white rounded-xl flex items-center justify-center shadow-lg" data-index="1">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Hero_MotoCorp_Logo.svg" alt="Hero MotoCorp" />
+      </div>
+      <div class="card w-48 h-32 bg-white rounded-xl flex items-center justify-center shadow-lg" data-index="2">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Balaji_Wafers_logo.png" alt="Balaji Wafers" />
+      </div>
+      <div class="card w-48 h-32 bg-white rounded-xl flex items-center justify-center shadow-lg" data-index="3">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Haldiram%27s_logo.png" alt="Haldiram's" />
+      </div>
+      <div class="card w-48 h-32 bg-white rounded-xl flex items-center justify-center shadow-lg" data-index="4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/TATA_logo.svg" alt="Tata" />
+      </div>
+    </div>
+  </div>
+  <button class="mt-10 px-6 py-2 border border-pink-400 text-pink-400 rounded-md hover:bg-pink-400 hover:text-black transition-all duration-300">
+    All Sponsors
+  </button>
+
+<script>
+  const stack = document.getElementById("stack");
+  const cardTemplates = [
+    { img: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Stack_Overflow_logo.svg", alt: "Stack Overflow" },
+    { img: "https://upload.wikimedia.org/wikipedia/commons/5/55/Hero_MotoCorp_Logo.svg", alt: "Hero MotoCorp" },
+    { img: "https://upload.wikimedia.org/wikipedia/en/7/7d/Balaji_Wafers_logo.png", alt: "Balaji Wafers" },
+    { img: "https://upload.wikimedia.org/wikipedia/commons/4/43/Haldiram%27s_logo.png", alt: "Haldiram's" },
+    { img: "https://upload.wikimedia.org/wikipedia/commons/3/3e/TATA_logo.svg", alt: "Tata" }
+  ];
+  
+  let cards = [];
+  let positions = [];
+  
+  function init() {
+    stack.innerHTML = '';
+    cards = [];
+    positions = [];
+    
+    // Create 20 cards (4 full cycles) for ultra-smooth wrapping
+    for (let i = 0; i < 20; i++) {
+      const template = cardTemplates[i % cardTemplates.length];
+      const card = document.createElement('div');
+      card.className = 'card w-48 h-32 bg-white rounded-xl flex items-center justify-center shadow-lg';
+      card.innerHTML = `<img src="${template.img}" alt="${template.alt}" />`;
+      stack.appendChild(card);
+      cards.push(card);
+      positions.push(i - 10); // Center at position 0
+    }
+  }
+  
+  function render() {
+    cards.forEach((card, i) => {
+      const pos = positions[i];
+      const abs = Math.abs(pos);
+      
+      // Smoother scale curve with better center emphasis
+      let scale;
+      if (pos === 0) {
+        scale = 1.15; // Center card bigger
+      } else {
+        const scaleFactor = 1 / (1 + abs * 0.15);
+        scale = Math.max(0.6, scaleFactor);
+      }
+      
+      // Calculate dimensions
+      const baseWidth = 192;
+      const baseHeight = 128;
+      const width = baseWidth * scale;
+      const height = baseHeight * scale;
+      
+      card.style.width = width + 'px';
+      card.style.height = height + 'px';
+      
+      // Only show cards within range
+      if (abs < 10) {
+        card.style.display = 'flex';
+        
+        // Smoother spacing and depth
+        const xOffset = pos * 120 * (1 - abs * 0.01);
+        const zOffset = -abs * 120;
+        const yOffset = abs * 8;
+        
+        // Transform from center point of the card
+        card.style.transform = `
+          translate(-50%, -50%)
+          translateX(${xOffset}px)
+          translateY(${yOffset}px)
+          translateZ(${zOffset}px)
+          rotateY(${pos * 2}deg)
+        `;
+        
+        // Smoother opacity curve
+        const opacityFactor = 1 / (1 + abs * 0.2);
+        card.style.opacity = Math.max(0.2, opacityFactor);
+        card.style.zIndex = Math.floor(100 - abs * 10);
+        
+        // Add subtle shadow for depth
+        const shadowBlur = 20 + abs * 10;
+        const shadowOpacity = 0.3 - abs * 0.03;
+        card.style.boxShadow = `0 ${abs * 5}px ${shadowBlur}px rgba(0,0,0,${Math.max(0, shadowOpacity)})`;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+  
+  function advance() {
+    // Move all positions to the left
+    positions = positions.map(p => p - 1);
+    
+    // Wrap cards from left to right
+    positions.forEach((pos, i) => {
+      if (pos < -10) {
+        const maxPos = Math.max(...positions);
+        positions[i] = maxPos + 1;
+      }
+    });
+    
+    render();
+  }
+  
+  init();
+  render();
+  
+  // Slower interval for smoother feel
+  setInterval(advance, 3200);
+</script>
+</body>
+</html>
