@@ -43,6 +43,7 @@
                         'drift': 'drift 20s infinite alternate ease-in-out',
                         'marquee-up': 'marquee-up 60s linear infinite',
                         'marquee-down': 'marquee-down 60s linear infinite',
+                        'shimmer': 'shimmer 3s ease-in-out infinite',
                     },
                     keyframes: {
                         float: {
@@ -60,6 +61,11 @@
                         'marquee-down': {
                             '0%': { transform: 'translateY(-50%)' },
                             '100%': { transform: 'translateY(0)' },
+                        },
+                        shimmer: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '50%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(100%)' },
                         }
                     }
                 }
@@ -751,26 +757,324 @@
             <h1 class="font-header text-5xl sm:text-6xl md:text-9xl text-gold-metallic font-black mb-6 tracking-tighter drop-shadow-2xl leading-none">
                 VISHWAPRENEUR
             </h1>
-            <p class="font-body text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto italic font-light leading-relaxed mb-10">
+            <p class="font-body text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto italic font-light leading-relaxed mb-32">
                 “In the crucible of entrepreneurship, ideas are tested, risks are refined, and vision is transmuted into value.”
             </p>
             
-            <!-- NEW: Explore Button -->
-            <div class="mb-12">
-                <a href="#geometry" class="group relative inline-flex items-center gap-3 px-8 py-3 overflow-hidden rounded-sm bg-void border border-gold-500/50 transition-all duration-300 hover:border-gold-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]">
-                    <!-- Hover Fill -->
-                    <div class="absolute inset-0 w-0 bg-gold-500/10 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+            <!-- Alchemical Register Button -->
+            <div class="mb-5">
+                <button id="openStudentTypeModal" class="group relative inline-block animate-float" style="background: none; border: none; cursor: pointer;">
+                    <!-- Animated Glow Rings -->
+                    <div class="absolute inset-0 -m-4 opacity-50">
+                        <div class="absolute inset-0 rounded-full border border-gold-400/30 animate-ping" style="animation-duration: 3s;"></div>
+                        <div class="absolute inset-0 rounded-full border border-gold-400/20 animate-ping" style="animation-duration: 4s; animation-delay: 1s;"></div>
+                    </div>
                     
-                    <span class="relative font-header text-xs tracking-[0.3em] text-gold-300 group-hover:text-gold-200 uppercase">Explore Now</span>
-                    <i data-lucide="arrow-down" class="relative w-4 h-4 text-gold-300 transition-transform duration-300 group-hover:translate-y-1"></i>
-                </a>
+                    <!-- Orbiting Particles -->
+                    <div class="absolute top-1/2 left-1/2 w-32 h-32 -translate-x-1/2 -translate-y-1/2 -z-10">
+                        <div class="absolute top-0 left-1/2 w-1.5 h-1.5 bg-gold-400/60 rounded-full animate-spin" style="animation-duration: 8s; transform-origin: 0 64px;"></div>
+                        <div class="absolute top-0 left-1/2 w-1 h-1 bg-gold-300/40 rounded-full animate-spin" style="animation-duration: 6s; animation-direction: reverse; transform-origin: 0 64px;"></div>
+                        <div class="absolute top-0 left-1/2 w-1 h-1 bg-gold-500/50 rounded-full animate-spin" style="animation-duration: 10s; transform-origin: 0 64px; animation-delay: 2s;"></div>
+                    </div>
+                    
+                    <!-- Main Button with Beveled Edges -->
+                    <div class="relative px-20 py-5 bg-gradient-to-b from-gold-500 via-gold-600 to-gold-700 transition-all duration-500 group-hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] group-hover:from-gold-400 group-hover:via-gold-500 group-hover:to-gold-600 group-hover:scale-105" style="clip-path: polygon(8% 0%, 92% 0%, 100% 25%, 100% 75%, 92% 100%, 8% 100%, 0% 75%, 0% 25%);">
+                        
+                        <!-- Top metallic highlight -->
+                        <div class="absolute top-0 left-[8%] right-[8%] h-[2px] bg-gradient-to-r from-transparent via-gold-200/80 to-transparent animate-pulse"></div>
+                        
+                        <!-- Bottom shadow line -->
+                        <div class="absolute bottom-0 left-[8%] right-[8%] h-[1px] bg-black/30"></div>
+                        
+                        <!-- Subtle inner glow -->
+                        <div class="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent opacity-60 animate-pulse-slow"></div>
+                        
+                        <!-- Animated shine sweep that repeats -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent animate-[shimmer_3s_ease-in-out_infinite]" style="animation-delay: 1s;"></div>
+                        
+                        <!-- Left and Right Edge Accents -->
+                        <div class="absolute left-0 top-[25%] bottom-[25%] w-[1px] bg-gold-800/50"></div>
+                        <div class="absolute right-0 top-[25%] bottom-[25%] w-[1px] bg-gold-800/50"></div>
+                        
+                        <!-- Animated Corner Dots -->
+                        <div class="absolute top-2 left-8 w-1 h-1 bg-gold-200/70 rounded-full animate-pulse"></div>
+                        <div class="absolute top-2 right-8 w-1 h-1 bg-gold-200/70 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                        <div class="absolute bottom-2 left-8 w-1 h-1 bg-gold-900/70 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+                        <div class="absolute bottom-2 right-8 w-1 h-1 bg-gold-900/70 rounded-full animate-pulse" style="animation-delay: 1.5s;"></div>
+                        
+                        <!-- Button Text -->
+                        <span class="relative font-header text-lg md:text-xl tracking-[0.4em] font-black uppercase text-black/90 transition-all duration-300 group-hover:tracking-[0.45em] group-hover:text-black">
+                            Register
+                        </span>
+                    </div>
+                    
+                    <!-- 3D Shadow Effect -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-gold-800/40 to-gold-900/60 -z-10 translate-y-1.5 translate-x-1.5 transition-transform duration-300 group-hover:translate-y-2.5 group-hover:translate-x-2.5" style="clip-path: polygon(8% 0%, 92% 0%, 100% 25%, 100% 75%, 92% 100%, 8% 100%, 0% 75%, 0% 25%);"></div>
+                </button>
             </div>
 
-            <div class="flex justify-center gap-6">
-                <div class="h-16 w-[1px] bg-gradient-to-b from-gold-300 to-transparent"></div>
+            <!-- How to Register Link -->
+            <div class="mb-20">
+                <button id="openRegisterModal" class="group inline-flex items-center gap-2 text-gray-500 hover:text-gold-400 transition-all duration-500 cursor-pointer bg-none border-none p-0">
+                    <svg class="w-4 h-4 text-gold-600/40 transition-all duration-300 group-hover:text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke-width="1"/>
+                        <path d="M12 16v-4M12 8h.01" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="font-body text-base md:text-lg relative tracking-wide">
+                        How to register?
+                        <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-gradient-to-r from-gold-600 to-gold-400 transition-all duration-500 group-hover:w-full"></span>
+                    </span>
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- Student Type Selection Modal -->
+    <div id="studentTypeModal" class="fixed inset-0 z-[999] hidden overflow-y-auto" style="background: rgba(0,0,0,0.85); backdrop-filter: blur(4px);">
+        <div class="min-h-screen flex items-center justify-center p-4">
+            <div class="relative w-full max-w-2xl bg-charcoal border border-gold-500/30 shadow-[0_0_50px_rgba(212,175,55,0.3)] rounded-lg" style="backdrop-filter: blur(12px);">
+                
+                <!-- Close Button -->
+                <button onclick="closeStudentTypeModal()" class="absolute top-6 right-6 z-10 text-gold-300 hover:text-gold-200 transition-colors" aria-label="Close">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Modal Header -->
+                <div class="relative overflow-hidden" style="background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(80,70,30,0.1));">
+                    <div class="absolute inset-0 border-b border-gold-500/20"></div>
+                    <div class="relative px-8 py-12 text-center">
+                        <h2 class="font-header text-4xl md:text-5xl text-gold-300 tracking-wider mb-2">SELECT YOUR CATEGORY</h2>
+                        <p class="font-body text-gold-200/70 text-sm tracking-widest uppercase">Choose your student type to proceed</p>
+                    </div>
+                </div>
+
+                <!-- Student Type Options -->
+                <div class="px-8 py-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Option 1: Non-VIIT Students -->
+                        <button onclick="selectStudentType('non-viit')" class="group relative p-8 border border-gold-500/30 bg-gradient-to-br from-charcoal to-black hover:from-gold-900/20 hover:to-charcoal transition-all duration-300 hover:border-gold-500/60 hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+                            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: linear-gradient(135deg, rgba(212,175,55,0.05) 0%, transparent 100%);"></div>
+                            <div class="relative">
+                                <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-lg bg-gradient-to-br from-gold-500 to-gold-700">
+                                    <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="font-header text-xl text-gold-300 mb-2 tracking-wide">Other Students</h3>
+                                <p class="font-body text-gray-400 text-sm leading-relaxed">Students outside Vishwakarma University</p>
+                            </div>
+                        </button>
+
+                        <!-- Option 2: VIIT Students -->
+                        <button onclick="selectStudentType('viit')" class="group relative p-8 border border-gold-500/30 bg-gradient-to-br from-charcoal to-black hover:from-gold-900/20 hover:to-charcoal transition-all duration-300 hover:border-gold-500/60 hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+                            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: linear-gradient(135deg, rgba(212,175,55,0.05) 0%, transparent 100%);"></div>
+                            <div class="relative">
+                                <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-lg bg-gradient-to-br from-gold-500 to-gold-700">
+                                    <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82M12 5.18L5.18 9 12 12.82 18.82 9 12 5.18M12 1l7 4v6l-7 4-7-4V5l7-4z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="font-header text-xl text-gold-300 mb-2 tracking-wide">VIT Students</h3>
+                                <p class="font-body text-gray-400 text-sm leading-relaxed">Students of Vishwakarma University</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How to Register Modal -->
+    <div id="registerModal" class="fixed inset-0 z-[999] hidden overflow-y-auto" style="background: rgba(0,0,0,0.85); backdrop-filter: blur(4px);">
+        <!-- Modal Content -->
+        <div class="min-h-screen flex items-center justify-center p-4 py-12">
+            <div class="relative w-full max-w-4xl bg-charcoal border border-gold-500/30 shadow-[0_0_50px_rgba(212,175,55,0.3)]" style="backdrop-filter: blur(12px);">
+                
+                <!-- Close Button -->
+                <button id="closeRegisterModal" class="absolute top-6 right-6 z-10 text-gold-300 hover:text-gold-200 transition-colors" aria-label="Close">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Modal Header -->
+                <div class="relative overflow-hidden" style="background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(80,70,30,0.1));">
+                    <div class="absolute inset-0 border-b border-gold-500/20"></div>
+                    <div class="relative px-8 py-12 text-center">
+                        <h2 class="font-header text-4xl md:text-5xl text-gold-300 tracking-wider mb-2">HOW TO REGISTER</h2>
+                        <p class="font-body text-gold-200/70 text-sm tracking-widest uppercase">Step-by-Step Guide</p>
+                    </div>
+                </div>
+
+                <!-- YouTube Video Section -->
+                <div id="videoSection" class="relative px-8 py-12 border-b border-gold-500/20" style="background: rgba(0,0,0,0.4);">
+                    <h3 class="font-header text-2xl text-gold-300 mb-6 tracking-wide">Watch Registration Tutorial</h3>
+                    <div class="relative w-full bg-black rounded-lg overflow-hidden border border-gold-400/30" style="padding-bottom: 56.25%;">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/iCY_21BcWJI?si=fAfQzNrbz9foWhol" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Registration Instructions -->
+                <div class="px-8 py-12 space-y-12">
+                    
+                    <!-- Section 1: Non-VIIT Students -->
+                    <div id="section-non-viit">
+                        <div class="flex items-start gap-4 mb-8">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-br from-gold-500 to-gold-700">
+                                    <span class="text-black font-bold text-lg">1</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="font-header text-2xl text-gold-300 mb-2 tracking-wide">For Students Outside Vishwakarma University</h3>
+                                <p class="font-body text-gray-300 text-sm leading-relaxed">Follow these simple steps to register for Vishwapreneur 25</p>
+                            </div>
+                        </div>
+                        <div class="ml-14 space-y-4">
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Visit <a href="https://learner.vierp.in/events" target="_blank" class="text-gold-300 font-semibold hover:text-gold-200 underline underline-offset-2 transition-colors">learner.vierp.in/events</a></p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Click on sign-up button on the bottom left corner</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Enter your email address & verify the OTP received</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Fill up the required details & set a password</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Now, login using your email and password</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">On the top left corner of your dashboard, click on the dropdown</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Click on <span class="text-gold-300 font-semibold">Pay Event Fees</span></p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Select Organising institute as <span class="text-gold-300 font-semibold">VIIT, Pune</span> from dropdown menu</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Select event as <span class="text-gold-300 font-semibold">VISHWAPRENEUR 25</span> from dropdown</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Select the type of ticket as either <span class="text-gold-300 font-semibold">VIP-external or Regular-external</span></p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Click on <span class="text-gold-300 font-semibold">Pay</span></p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Select payment option</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">After successful payment of the fees, receipt will be generated and a confirmation email will be sent within 24 hours</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed"><span class="text-gold-300 font-semibold">Important:</span> Note down your Reference number</p>
+                            </div>
+                            <div class="mt-8 pt-6 border-t border-gold-500/20">
+                                <a href="https://learner.vierp.in/events" target="_blank" class="inline-block px-6 py-2 bg-gold-600 hover:bg-gold-500 text-black font-semibold text-sm transition-colors">Register Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div id="section-divider" class="h-px bg-gradient-to-r from-transparent via-gold-500/30 to-transparent"></div>
+
+                    <!-- Section 2: VIIT Students -->
+                    <div id="section-viit">
+                        <div class="flex items-start gap-4 mb-8">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-br from-gold-500 to-gold-700">
+                                    <span class="text-black font-bold text-lg">2</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="font-header text-2xl text-gold-300 mb-2 tracking-wide">For Students Of Vishwakarma University</h3>
+                                <p class="font-body text-gray-300 text-sm leading-relaxed">Use your institution credentials to register</p>
+                            </div>
+                        </div>
+                        <div class="ml-14 space-y-4">
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Login to <a href="https://learner.vierp.in/" target="_blank" class="text-gold-300 font-semibold hover:text-gold-200 underline underline-offset-2 transition-colors">learner.vierp</a> using your PRN number and password</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Click on dropdown menu on the top left corner of the dashboard</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Select <span class="text-gold-300 font-semibold">accounts section</span></p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Click on <span class="text-gold-300 font-semibold">pay event fees</span> from the dropdown</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Select Organising institute as <span class="text-gold-300 font-semibold">VIIT, Pune</span> from dropdown menu</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Select event as <span class="text-gold-300 font-semibold">VISHWAPRENEUR 25</span> from dropdown</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Select the type of ticket as either <span class="text-gold-300 font-semibold">VIP or Regular</span></p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Click on <span class="text-gold-300 font-semibold">Pay</span></p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">Select payment option</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed">After successful payment of the fees, receipt will be generated and a confirmation email will be sent within 24 hours</p>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <span class="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-gold-400 group-hover:bg-gold-300 transition-colors"></span>
+                                <p class="font-body text-gray-300 leading-relaxed"><span class="text-gold-300 font-semibold">Important:</span> Note down your Reference number</p>
+                            </div>
+                            <div class="mt-8 pt-6 border-t border-gold-500/20">
+                                <a href="https://learner.vierp.in/" target="_blank" class="inline-block px-6 py-2 bg-gold-600 hover:bg-gold-500 text-black font-semibold text-sm transition-colors">Register Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="border-t border-gold-500/20 px-8 py-8 text-center" style="background: rgba(0,0,0,0.3);">
+                    <button id="closeRegisterModal2" class="px-8 py-3 bg-gradient-to-br from-gold-600 to-gold-700 hover:from-gold-500 hover:to-gold-600 text-black font-semibold tracking-widest uppercase transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Sacred Geometry Scroll Reassembly -->
     <section id="geometry" class="relative h-[500vh] bg-void z-20">
@@ -1779,6 +2083,104 @@
             animate();
         }
         initRandomGlows();
+
+        // Modal Management
+        const registerModal = document.getElementById('registerModal');
+        const studentTypeModal = document.getElementById('studentTypeModal');
+        const openStudentTypeBtn = document.getElementById('openStudentTypeModal');
+        const openRegisterModalBtn = document.getElementById('openRegisterModal');
+        const closeRegisterModalBtn = document.getElementById('closeRegisterModal');
+        const closeRegisterModalBtn2 = document.getElementById('closeRegisterModal2');
+        let selectedStudentType = null;
+
+        // Student Type Modal Functions
+        function openStudentTypeModal() {
+            studentTypeModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeStudentTypeModal() {
+            studentTypeModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function selectStudentType(type) {
+            selectedStudentType = type;
+            closeStudentTypeModal();
+            openRegisterModal(type);
+        }
+
+        // How to Register Modal Functions
+        function openRegisterModal(studentType) {
+            const nonViitSection = document.getElementById('section-non-viit');
+            const viitSection = document.getElementById('section-viit');
+            const divider = document.getElementById('section-divider');
+            const videoSection = document.getElementById('videoSection');
+            
+            // Show/hide sections based on student type
+            if (studentType === 'non-viit') {
+                nonViitSection.style.display = 'block';
+                viitSection.style.display = 'none';
+                divider.style.display = 'none';
+                videoSection.style.display = 'none';
+            } else if (studentType === 'viit') {
+                nonViitSection.style.display = 'none';
+                viitSection.style.display = 'block';
+                divider.style.display = 'none';
+                videoSection.style.display = 'none';
+            } else {
+                // Show both if no type selected (from "How to register?" link)
+                nonViitSection.style.display = 'block';
+                viitSection.style.display = 'block';
+                divider.style.display = 'block';
+                videoSection.style.display = 'block';
+            }
+            
+            registerModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            registerModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Open student type modal on Register button click
+        openStudentTypeBtn.addEventListener('click', openStudentTypeModal);
+
+        // Open register modal from "How to register?" link (show all sections)
+        openRegisterModalBtn.addEventListener('click', () => openRegisterModal(null));
+
+        // Close register modal on X button click
+        closeRegisterModalBtn.addEventListener('click', closeModal);
+
+        // Close register modal on footer button click
+        closeRegisterModalBtn2.addEventListener('click', closeModal);
+
+        // Close modals on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                if (!studentTypeModal.classList.contains('hidden')) {
+                    closeStudentTypeModal();
+                } else if (!registerModal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            }
+        });
+
+        // Close student type modal when clicking outside
+        studentTypeModal.addEventListener('click', function(event) {
+            if (event.target === studentTypeModal) {
+                closeStudentTypeModal();
+            }
+        });
+
+        // Close register modal when clicking outside
+        registerModal.addEventListener('click', function(event) {
+            if (event.target === registerModal) {
+                closeModal();
+            }
+        });
 
     </script>
 </body>
